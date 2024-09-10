@@ -10,6 +10,6 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'My name is Sahibjot Singh';
-  age: number = 24;
+  age: number = 23;
 
 }
