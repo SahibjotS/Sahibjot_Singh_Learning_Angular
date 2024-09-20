@@ -1,0 +1,29 @@
+h1 {
+  color: orangered;
+  text-align: center;
+  font-weight: bold;
+
+}
+div {
+  text-align: center;
+  background-color: lightgrey;
+  border: 2px solid navy;
+}
+
+h2 {
+ color:navy ;
+  margin:0;
+  padding:10px 0;
+}
+h3{
+
+  color: brown;
+
+}
+
+p{
+  margin: 45px;
+  color: black;
+
+}
+
