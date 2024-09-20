@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import {laptop} from './shared/model/laptop';
 
 @Component({
   selector: 'app-root',
