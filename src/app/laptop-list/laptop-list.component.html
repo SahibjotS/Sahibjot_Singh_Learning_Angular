@@ -1,4 +1,6 @@
-<app-laptop-list-item></app-laptop-list-item>
-<app-laptop-list-item></app-laptop-list-item>
-<app-laptop-list-item></app-laptop-list-item>
-<app-laptop-list-item></app-laptop-list-item>
+<html>
+<div *ngFor="let laptop of laptopItem">
+
+<app-laptop-list-item [laptopItem]="laptop"></app-laptop-list-item>
+</div>
+</html>

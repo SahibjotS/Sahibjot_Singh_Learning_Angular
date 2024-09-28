@@ -13,6 +13,6 @@ import{LaptopListItemComponent} from "./laptop-list-item/laptop-list-item.compon
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'User Generation';
+  title = 'Sahib Laptops';
 
 }
