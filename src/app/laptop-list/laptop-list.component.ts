@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import {CommonModule} from "@angular/common";
 import {LaptopListItem, LaptopListItemComponent} from "../laptop-list-item/laptop-list-item.component";
+import {RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-laptop-list',
   standalone: true,
   imports: [
-    LaptopListItemComponent,CommonModule
+    LaptopListItemComponent, CommonModule, RouterLink
   ],
   templateUrl: './laptop-list.component.html',
   styleUrl: './laptop-list.component.css'

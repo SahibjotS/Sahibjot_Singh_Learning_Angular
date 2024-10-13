@@ -1,6 +1,7 @@
-<html>
-<div *ngFor="let laptop of laptopItem">
-
-<app-laptop-list-item [laptopItem]="laptop"></app-laptop-list-item>
-</div>
-</html>
+<tr  *ngFor="let laptop of laptopItem"
+  [routerLink]="['/laptop',laptop.customerName]">
+  <td>{{laptop.customerName}}</td>
+  <td>{{laptop.company}}</td>
+  <td>{{laptop.storage}}</td>
+  <td>{{laptop.Model}}</td>
+  <td>{{laptop.EMI}}</td>
