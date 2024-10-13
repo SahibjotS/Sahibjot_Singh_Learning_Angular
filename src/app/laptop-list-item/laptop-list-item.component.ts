@@ -2,7 +2,8 @@ import {Component, Input,OnInit} from '@angular/core';
 import {laptop} from "../shared/laptop";
 import {NgIf} from "@angular/common";
 import {ActivatedRoute} from "@angular/router";
-import {}
+import {LaptopListComponent} from "../laptop-list/laptop-list.component";
+
 
 @Component({
   selector: 'app-laptop-list-item',
@@ -15,26 +16,34 @@ export class LaptopListItemComponent implements OnInit{
 
   laptops: laptop |undefined;
   laptopList: laptop[]=[];
-  current Index=0;
+  currentIndex=0;
 
 
-  constructor {
+  constructor (
     private route:ActivatedRoute,
-  private
-  }{}
+
+  ){}
 
 
 
-  ngOnInit(){ const
+  ngOnInit():void{
   const id =this.route.snapshot.paramMap.get('id');
   if (id){
-  this.l}
+  }
 }
+
+  protected readonly LaptopListComponent = LaptopListComponent;
+
+  goBackward() {
+
+  }
+
+  goForwad() {
+
+  }
+
+  goBack() {
+
+  }
 }
-export interface LaptopListItem{
-  customerName:string,
-  company: string,
-  storage:string;
-  Model:string;
-  EMI?:boolean
-}
+

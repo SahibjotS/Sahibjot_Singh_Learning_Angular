@@ -1,7 +1,13 @@
-<div style ="border: 2px solid brown; padding: 5px">
-<h1>{{laptopItem.customerName}}</h1>
-<h2>{{laptopItem.company}}</h2>
-<h1>{{laptopItem.storage}}</h1>
-<h1>{{laptopItem.Model}}</h1>
-<h1>{{laptopItem.EMI}}</h1>
+<div *ngFor="LaptopListComponent">
+  <h2>Laptop Detail</h2>
+  <p><strong>customerName</strong>{{laptops?.customerName}}
+  <p><strong>company</strong>{{laptops?.company}}
+  <p><strong>storage</strong>{{laptops?.storage}}
+  <p><strong>model</strong>{{laptops?.Model}}
+  <p><strong>Emi</strong>{{laptops?.EMI}}
+  <button (click)="goBackward()" [disabled]="currentIndex=== 0">Previous</button>
+  <button (click)="goForwad()"[disabled]="currentIndex===laptopList.length-1">Next</button>
+  <button (click)="goBack()">Back  to  Book List</button>>
+
+
 </div>

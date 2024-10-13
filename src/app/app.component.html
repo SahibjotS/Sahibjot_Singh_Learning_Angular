@@ -1,6 +1,16 @@
+<html>
 <div class ="nav-bar">
+  <h1>Home page</h1>
+  <div class="nav-bar">
   <nav>
     <a routerLink="/laptop" routerLinkActive="active">Laptop List</a>
     <a routerLink="/modify-laptop" routerLinkActive="active">Modify Laptop</a>
+    <a routerLink="/page-not-found"routerLinkActive="active">Page not found</a>
   </nav>
 </div>
+  <div class="app-container">
+    <h2>{{title}}</h2>
+    <router-outlet></router-outlet>
+  </div>
+</div>
+</html>
