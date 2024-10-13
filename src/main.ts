@@ -4,6 +4,8 @@ import { AppComponent } from './app/app.component';
 import {provideRouter,Routes} from "@angular/router";
 import  {LaptopListComponent} from "./app/laptop-list/laptop-list.component";
 import {LaptopListItemComponent} from "./app/laptop-list-item/laptop-list-item.component";
+import {modi}
+import{PageNotFoundComponent} from "./app/page-not-found/page-not-found.component";
 
 const routes:Routes=[
   {path:'',redirectTo:'/laptop',pathMatch:'full'},
