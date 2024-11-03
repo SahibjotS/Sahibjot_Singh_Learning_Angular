@@ -1,23 +1,66 @@
-import { Component } from '@angular/core';
-import {CommonModule} from "@angular/common";
-import {LaptopListItem, LaptopListItemComponent} from "../laptop-list-item/laptop-list-item.component";
-import {RouterLink} from "@angular/router";
+import { CommonModule } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
+import { Router, RouterModule } from '@angular/router';
+import { NgForOf } from '@angular/common';
+import { NgOptimizedImage } from '@angular/common';
+import{laptop} from "../shared/laptop";
+import { LaptopListItemComponent } from '../laptop-list-item/laptop-list-item.component';
+import{DataService} from "../services/data.service";
 
 @Component({
   selector: 'app-laptop-list',
   standalone: true,
   imports: [
-    LaptopListItemComponent, CommonModule, RouterLink
+    CommonModule,
+    RouterModule,
+    NgForOf,
+    LaptopListItemComponent,
+    NgOptimizedImage
   ],
   templateUrl: './laptop-list.component.html',
-  styleUrl: './laptop-list.component.css'
+  styleUrls: ['./laptop-list.component.css']
 })
-export class LaptopListComponent {
-  laptopItem:LaptopListItem[]=[
-    {customerName:"Krisha Panesar", company:"Asus",storage:"SSD",Model:"Zenbook",EMI:true},
-  {customerName:"Shalini Khashyp", company:"Asus",storage:"SSD",Model:"Zenbook Pro 2",EMI:true},
-  {customerName:"Kamaldeep  Singh", company:"HP",storage:"HDD",Model:"FHD business",EMI:false},
-  {customerName:"Gursimrat Singh", company:"Acer",storage:"SSD",Model:"Aspire 5",EMI:true}
-  ]
+export class LaptopListComponent implements OnInit {
+  laptopList: laptop[] = [];
 
+  constructor(private laptopService: DataService, private router: Router) {}
+
+  ngOnInit(): void {
+    // This lifecycle hook is a good place to fetch and initialize our data
+    this.fetchLaptops();
+  }
+
+  fetchLaptops(): void {
+    this.laptopService.getLaptops().subscribe({
+      next: (data: laptop[]) => {
+        this.laptopList = data;
+        console.log("Laptops fetched successfully!", this.laptopList);
+      },
+      error: err => {
+        console.error("Error fetching laptops", err);
+      },
+      complete: () => {
+        console.log("Laptop data fetch complete!");
+      }
+    });
+  }
+
+  editLaptop(laptopId: number): void {
+    this.router.navigate(['/laptops', laptopId]);
+  }
+
+  deleteLaptop(laptopId: number): void {
+    if (confirm('Are you sure you want to delete this laptop?')) {
+      this.laptopService.deleteLaptop(laptopId).subscribe({
+        next: () => {
+          // Reload the laptop list after deletion
+          this.laptopList = this.laptopList.filter(laptop => laptop.Id !== laptopId);
+          console.log(`Laptop with ID ${laptopId} deleted.`);
+        },
+        error: err => {
+          console.error("Error deleting laptop", err);
+        }
+      });
+    }
+  }
 }
