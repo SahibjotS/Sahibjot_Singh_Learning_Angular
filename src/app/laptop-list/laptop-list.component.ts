@@ -26,7 +26,7 @@ export class LaptopListComponent implements OnInit {
   constructor(private laptopService: DataService, private router: Router) {}
 
   ngOnInit(): void {
-    // This lifecycle hook is a good place to fetch and initialize our data
+
     this.fetchLaptops();
   }
 

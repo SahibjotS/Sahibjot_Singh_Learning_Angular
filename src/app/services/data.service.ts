@@ -6,7 +6,7 @@ import { Observable, of } from "rxjs";
   providedIn: 'root'
 })
 export class DataService {
-  private laptops: laptop[] = []; // Initialize as an empty array or populate it with data if needed
+  private laptops: laptop[] = [];
 
   constructor() { }
 

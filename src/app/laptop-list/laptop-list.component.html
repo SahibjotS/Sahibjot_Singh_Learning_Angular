@@ -1,7 +1,32 @@
-<tr  *ngFor="let laptop of laptopItem"
-  [routerLink]="['/laptop',laptop.customerName]">
-  <td>{{laptop.customerName}}</td>
-  <td>{{laptop.company}}</td>
-  <td>{{laptop.storage}}</td>
-  <td>{{laptop.Model}}</td>
-  <td>{{laptop.EMI}}</td>
+<html>
+<head>
+  <title>Laptop List</title>
+</head>
+<body>
+<h1>Laptop List</h1>
+<table>
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Customer Name</th>
+    <th>Company</th>
+    <th>Storage</th>
+    <th>Model</th>
+    <th>Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let laptop of laptopList">
+    <td>{{ laptop.Id }}</td>
+    <td>{{ laptop.customerName }}</td>
+    <td>{{ laptop.company }}</td>
+    <td>{{ laptop.storage }}</td>
+    <td>
+      <button (click)="editLaptop(laptop.Id)">Edit</button>
+      <button (click)="deleteLaptop(laptop.Id)">Delete</button>
+    </td>
+  </tr>
+  </tbody>
+</table>
+</body>
+</html>
