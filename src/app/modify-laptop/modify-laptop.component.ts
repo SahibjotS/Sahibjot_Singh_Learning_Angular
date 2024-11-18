@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { laptop} from "../shared/laptop"; //
+import { laptop} from "../Shared/Models/laptop"; //
 
 @Component({
   selector: 'app-laptop-form',

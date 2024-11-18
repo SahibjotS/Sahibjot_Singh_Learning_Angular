@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import{CommonModule} from "@angular/common";
-import {laptop} from "./shared/laptop";
+import {laptop} from "./Shared/Models/laptop";
 import {LaptopListComponent} from "./laptop-list/laptop-list.component";
 import{LaptopListItemComponent} from "./laptop-list-item/laptop-list-item.component";
 

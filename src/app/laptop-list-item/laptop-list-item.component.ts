@@ -1,5 +1,5 @@
 import {Component, Input,OnInit} from '@angular/core';
-import {laptop} from "../shared/laptop";
+import {laptop} from "../Shared/Models/laptop";
 import {NgIf} from "@angular/common";
 import {ActivatedRoute} from "@angular/router";
 import {LaptopListComponent} from "../laptop-list/laptop-list.component";

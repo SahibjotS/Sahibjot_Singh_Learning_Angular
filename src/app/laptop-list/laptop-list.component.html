@@ -13,20 +13,25 @@
     <th>Storage</th>
     <th>Model</th>
     <th>Actions</th>
+    <th>price</th>
+    <th>Date</th>
   </tr>
   </thead>
   <tbody>
   <tr *ngFor="let laptop of laptopList">
     <td>{{ laptop.Id }}</td>
     <td>{{ laptop.customerName }}</td>
-    <td>{{ laptop.company }}</td>
+    <td>{{ laptop.company| uppercase }}</td>
     <td>{{ laptop.storage }}</td>
-    <td>
+    <td>{{laptop.price|currency:'CAD': "symbol-narrow"}}</td>
+    <td> {{'2024-11-18 Time 12:06:00'|date:'fullDate'}}</td>
+
       <button (click)="editLaptop(laptop.Id)">Edit</button>
       <button (click)="deleteLaptop(laptop.Id)">Delete</button>
-    </td>
+
   </tr>
   </tbody>
 </table>
+<div *ngIf="error" class="error" >{{error}}</div>
 </body>
 </html>

@@ -3,9 +3,10 @@ import { Component, OnInit } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { NgForOf } from '@angular/common';
 import { NgOptimizedImage } from '@angular/common';
-import{laptop} from "../shared/laptop";
+import{laptop} from "../Shared/Models/laptop";
 import { LaptopListItemComponent } from '../laptop-list-item/laptop-list-item.component';
 import{DataService} from "../services/data.service";
+import {error} from "@angular/compiler-cli/src/transformers/util";
 
 @Component({
   selector: 'app-laptop-list',
@@ -63,4 +64,6 @@ export class LaptopListComponent implements OnInit {
       });
     }
   }
+
+  protected readonly error = error;
 }
