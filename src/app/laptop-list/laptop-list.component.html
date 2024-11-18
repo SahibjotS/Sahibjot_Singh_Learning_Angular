@@ -21,7 +21,8 @@
   <tr *ngFor="let laptop of laptopList">
     <td>{{ laptop.Id }}</td>
     <td>{{ laptop.customerName }}</td>
-    <td>{{ laptop.company| uppercase }}</td>
+    <td>{{ laptop.company }}</td>
+    <td>{{laptop |laptop |uppercase}}</td>
     <td>{{ laptop.storage }}</td>
     <td>{{laptop.price|currency:'CAD': "symbol-narrow"}}</td>
     <td> {{'2024-11-18 Time 12:06:00'|date:'fullDate'}}</td>

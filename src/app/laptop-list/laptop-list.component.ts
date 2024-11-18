@@ -7,6 +7,7 @@ import{laptop} from "../Shared/Models/laptop";
 import { LaptopListItemComponent } from '../laptop-list-item/laptop-list-item.component';
 import{DataService} from "../services/data.service";
 import {error} from "@angular/compiler-cli/src/transformers/util";
+import {LaptopPipe} from "../pipes/laptop.pipe";
 
 @Component({
   selector: 'app-laptop-list',
@@ -16,7 +17,8 @@ import {error} from "@angular/compiler-cli/src/transformers/util";
     RouterModule,
     NgForOf,
     LaptopListItemComponent,
-    NgOptimizedImage
+    NgOptimizedImage,
+    LaptopPipe
   ],
   templateUrl: './laptop-list.component.html',
   styleUrls: ['./laptop-list.component.css']
