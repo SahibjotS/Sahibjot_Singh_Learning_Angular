@@ -18,7 +18,8 @@
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let laptop of laptopList">
+  <tr *ngFor="let laptop of laptopList"
+    [routerLink]="['/laptops',laptop.Id]" [appHoverHighlight="'beige'"]>
     <td>{{ laptop.Id }}</td>
     <td>{{ laptop.customerName }}</td>
     <td>{{ laptop.company }}</td>
@@ -29,6 +30,9 @@
 
       <button (click)="editLaptop(laptop.Id)">Edit</button>
       <button (click)="deleteLaptop(laptop.Id)">Delete</button>
+
+
+
 
   </tr>
   </tbody>
