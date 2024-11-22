@@ -5,7 +5,8 @@ import { AppComponent } from './app/app.component';
 import { provideHttpClient } from '@angular/common/http';
 import { importProvidersFrom } from '@angular/core';
 import { HttpClientInMemoryWebApiModule } from "angular-in-memory-web-api";
-import { InMemoryDataService } from './app/in-memory-data.service';
+// @ts-ignore
+import { InMemoryDataService } from "./app/in-memory-data.service";
 
 const routes: Routes = [
   { path: '', redirectTo: '/laptops', pathMatch: 'full' },
