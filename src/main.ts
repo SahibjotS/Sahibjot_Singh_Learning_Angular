@@ -7,10 +7,12 @@ import { importProvidersFrom } from '@angular/core';
 import { HttpClientInMemoryWebApiModule } from "angular-in-memory-web-api";
 // @ts-ignore
 import { InMemoryDataService } from "./app/in-memory-data.service";
+import {ModifyLaptopComponent} from "./app/modify-laptop/modify-laptop.component";
 
 const routes: Routes = [
   { path: '', redirectTo: '/laptops', pathMatch: 'full' },
   { path: 'laptops', component: LaptopListComponent },
+  {path:'laptops/:id',component:ModifyLaptopComponent},
   {
     path: 'laptops/:Id',
     loadComponent: () =>
